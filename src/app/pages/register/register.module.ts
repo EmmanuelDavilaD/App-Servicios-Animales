@@ -7,6 +7,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { IonicModule } from '@ionic/angular';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RegisterPage } from './register.page';
+import {ComponentsModule} from '../../components/components.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     RecaptchaModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    ComponentsModule
   ],
   declarations: [RegisterPage]
 })

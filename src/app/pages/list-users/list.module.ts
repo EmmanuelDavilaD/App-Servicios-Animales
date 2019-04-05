@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ListPage } from './list.page';
 import { ListResolver } from './list.resolver';
+import {ComponentsModule} from '../../components/components.module';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ComponentsModule
   ],
   declarations: [ListPage],
   providers: [

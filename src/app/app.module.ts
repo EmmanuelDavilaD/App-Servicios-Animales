@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Environment } from '@ionic-native/google-maps';
 // import { NewEmpresaModalPage } from './new-empresa-modal/new-empresa-modal.page';
 import { RecaptchaModule } from 'ng-recaptcha';
+import {ComponentsModule} from './components/components.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AngularFireAuthModule, // imports firebase/auth
     AngularFireStorageModule, // imports firebase/storage
     RecaptchaModule,
+    ComponentsModule
   ],
   providers: [
     StatusBar,
