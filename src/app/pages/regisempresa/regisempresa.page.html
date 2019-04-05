@@ -1,0 +1,165 @@
+
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title>
+      <img src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+  <div text-center>
+    <h5>Registro de Empresas</h5>
+  </div>
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">Correo Electronico</ion-label>
+      <ion-input placeholder="Mascota@Actual.com" type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">CIF</ion-label>
+      <ion-input placeholder="CIF" type="text" formControlName="cif"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">N. Colegiado</ion-label>
+      <ion-input placeholder="Numero de Colegiado" type="text" formControlName="colegiado"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">Telefono</ion-label>
+      <ion-input placeholder=" 123-456-789" type="number" formControlName="telefono">+34-</ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+        <ion-label formControlName="localidad" color="ion-color-dark">Localidad</ion-label>
+        <ion-select  placeholder="Ciudad" cancelText="Cancelar" okText="Confirmar">
+          <ion-select-option value="Madrid">Madrid</ion-select-option>
+          <ion-select-option value='A Coruña' >A Coruña</ion-select-option>
+          <ion-select-option value='álava'>álava</ion-select-option>
+          <ion-select-option value='Albacete' >Albacete</ion-select-option>
+          <ion-select-option value='Alicante'>Alicante</ion-select-option>
+          <ion-select-option value='Almería' >Almería</ion-select-option>
+          <ion-select-option value='Asturias' >Asturias</ion-select-option>
+          <ion-select-option value='ávila' >Ávila</ion-select-option>
+          <ion-select-option value='Badajoz' >Badajoz</ion-select-option>
+          <ion-select-option value='Barcelona'>Barcelona</ion-select-option>
+          <ion-select-option value='Burgos' >Burgos</ion-select-option>
+          <ion-select-option value='Cáceres' >Cáceres</ion-select-option>
+          <ion-select-option value='Cádiz' >Cádiz</ion-select-option>
+          <ion-select-option value='Cantabria' >Cantabria</ion-select-option>
+          <ion-select-option value='Castellón' >Castellón</ion-select-option>
+          <ion-select-option value='Ceuta' >Ceuta</ion-select-option>
+          <ion-select-option value='Ciudad Real' >Ciudad Real</ion-select-option>
+          <ion-select-option value='Córdoba' >Córdoba</ion-select-option>
+          <ion-select-option value='Cuenca' >Cuenca</ion-select-option>
+          <ion-select-option value='Gerona' >Gerona</ion-select-option>
+          <ion-select-option value='Girona' >Girona</ion-select-option>
+          <ion-select-option value='Las Palmas' >Las Palmas</ion-select-option>
+          <ion-select-option value='Granada' >Granada</ion-select-option>
+          <ion-select-option value='Guadalajara' >Guadalajara</ion-select-option>
+          <ion-select-option value='Guipúzcoa' >Guipúzcoa</ion-select-option>
+          <ion-select-option value='Huelva' >Huelva</ion-select-option>
+          <ion-select-option value='Huesca' >Huesca</ion-select-option>
+          <ion-select-option value='Jaén' >Jaén</ion-select-option>
+          <ion-select-option value='La Rioja' >La Rioja</ion-select-option>
+          <ion-select-option value='León' >León</ion-select-option>
+          <ion-select-option value='Lleida' >Lleida</ion-select-option>
+          <ion-select-option value='Lugo' >Lugo</ion-select-option>
+          <ion-select-option value='Madrid' >Madrid</ion-select-option>
+          <ion-select-option value='Malaga' >Málaga</ion-select-option>
+          <ion-select-option value='Mallorca' >Mallorca</ion-select-option>
+          <ion-select-option value='Melilla' >Melilla</ion-select-option>
+          <ion-select-option value='Murcia' >Murcia</ion-select-option>
+          <ion-select-option value='Navarra' >Navarra</ion-select-option>
+          <ion-select-option value='Orense' >Orense</ion-select-option>
+          <ion-select-option value='Palencia' >Palencia</ion-select-option>
+          <ion-select-option value='Pontevedra'>Pontevedra</ion-select-option>
+          <ion-select-option value='Salamanca'>Salamanca</ion-select-option>
+          <ion-select-option value='Segovia' >Segovia</ion-select-option>
+          <ion-select-option value='Sevilla' >Sevilla</ion-select-option>
+          <ion-select-option value='Soria' >Soria</ion-select-option>
+          <ion-select-option value='Tarragona' >Tarragona</ion-select-option>
+          <ion-select-option value='Tenerife' >Tenerife</ion-select-option>
+          <ion-select-option value='Teruel' >Teruel</ion-select-option>
+          <ion-select-option value='Toledo' >Toledo</ion-select-option>
+          <ion-select-option value='Valencia' >Valencia</ion-select-option>
+          <ion-select-option value='Valladolid' >Valladolid</ion-select-option>
+          <ion-select-option value='Vizcaya' >Vizcaya</ion-select-option>
+          <ion-select-option value='Zamora' >Zamora</ion-select-option>
+          <ion-select-option value='Zaragoza'>Zaragoza</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">Password</ion-label>
+      <ion-input placeholder="**********" type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-color-dark" position="floating" color="primary">Confirmar Contraseña</ion-label>
+      <ion-input placeholder="**********" type="password" formControlName="confirmarPassword"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+    <div class="inner-wrapper">
+      <ion-label class="label label-ios">
+        <p class="checkbox proteccion">Antes de registrarte revisa los <a  routerLink="/terminos" >Términos y condiciones</a> y la <a  routerLink="/lqpd">LOPD</a>.</p>
+      </ion-label>
+    </div>
+    </ion-col>
+    <ion-col size="12">
+    <div class="inner-wrapper">
+      <ion-label class="label label-ios">
+        <ion-checkbox class="check" color="primary"></ion-checkbox>
+        <p  class="terminos"> Haciendo click aquì acepto los terminos y condicione.</p>
+
+      </ion-label>
+    </div>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+    <ion-button class="btn-boton" expand="block" type="submit" [disabled]="!validations_form.valid">Registrar</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+  </form>
+  <p class="go-to-login">Ya tienes una Cuenta? <a (click)="goLoginPage()">Iniciar Sesión</a></p>
+
+</ion-content>
+<ion-footer class="footer">
+  <div text-center>
+    <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+  </div>
+
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
+</ion-footer>

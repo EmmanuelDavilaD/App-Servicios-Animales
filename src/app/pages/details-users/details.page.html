@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-back-button color="dark" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+      <h3 class="texto">
+        <ion-input type="text" formControlName="title" [readonly]="true"></ion-input>
+      </h3>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <img class="imagen" [src]="image" alt="this is the image"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()" class="texto-imagen">Cambiar
+          imagen
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="../../assets/icon/center_marker.png" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+  <div id="address">
+    <span>{{item.payload.doc.data().ubicacion}}</span>
+  </div>
+
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+   
+    <div class="wrapper">
+
+
+      <div class="half">
+        <div class="tab">
+          <input id="tab-one" type="checkbox" name="tabs2">
+          <label for="tab-one" color="ion-color-dark">Especialidades</label>
+          <div class="tab-content">
+            <ion-list>
+              <ion-item *ngFor="let especialidad of this.item.especialidades">
+                {{especialidad}}
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+        <div class="tab">
+          <input id="tab-two" type="checkbox" name="tabs2">
+          <label for="tab-two" color="ion-color-dark">Campañas</label>
+          <div class="tab-content">
+            <ion-input type="text" formControlName="campañas" [readonly]="true"></ion-input>
+          </div>
+        </div>
+        <div class="tab">
+          <input id="tab-tres" type="checkbox" name="tabs2">
+          <label for="tab-tres" color="ion-color-dark">Dirección</label>
+          <div class="tab-content">
+            <ion-input type="text" formControlName="direccion" [readonly]="true"></ion-input>
+          </div>
+        </div>
+        <div class="tab">
+          <input id="tab-cinco" type="checkbox" name="tabs2">
+          <label for="tab-cinco" color="ion-color-dark">Ubicación</label>
+          <div class="tab-content">
+            <ion-input type="text" formControlName="ubicacion" [readonly]="true"></ion-input>
+          </div>
+        </div>
+        <div class="tab">
+          <input id="tab-three" type="checkbox" name="tabs2">
+          <label for="tab-three" color="ion-color-dark">Horario</label>
+          <div class="tab-content">
+            <ion-input type="text" formControlName="horario" [readonly]="true"></ion-input>
+          </div>
+        </div>
+        <div class="tab">
+          <input id="tab-cuatro" type="checkbox" name="tabs2">
+          <label for="tab-cuatro" color="ion-color-dark">Contacto</label>
+          <div class="tab-content">
+            <ion-item>
+              <ion-input type="text" formControlName="email" [readonly]="true"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" formControlName="telefono" [readonly]="true">+</ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div text-center>
+      <ion-button href="tel:+{{this.item.telefono}}">Contacto</ion-button>
+    </div>
+    <div text-center>
+      <ion-button href="https://maps.google.com/maps?q=+{{this.item.ubicacion}}">Dirección</ion-button>
+    </div>
+
+  </form>
+
+</ion-content>
+<ion-footer class="footer">
+  <div text-center>
+    <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+  </div>
+
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..."
+                            class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..."
+                            class="img-thumbnail"></a>
+  </div>
+</ion-footer>
+

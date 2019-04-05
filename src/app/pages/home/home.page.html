@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button class="" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title >
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <h5>¿A donde deseas ir?</h5>
+  </div>
+  <div class="empty-list">
+    <ion-row>
+      <ion-col size="12">
+        <ion-button  class="texto" expand="block" [routerLink]="['/home-app']">Pagina Principal</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button  class="texto" expand="block"  [routerLink]="['/list-all']">Listado de Empresas</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button  class="texto" expand="block"  [routerLink]="['/categories']">Especialidades</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="primary">
+    <ion-title color="dark">Cerrar Sesión</ion-title>
+  </ion-toolbar>
+</ion-footer>

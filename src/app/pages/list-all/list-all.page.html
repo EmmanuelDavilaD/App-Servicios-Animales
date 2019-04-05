@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button class="flecha" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title >
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="items" class="list-mini-content" padding>
+  <div *ngIf="items.length > 0" class="list-mini">
+    <ion-list>
+      <ion-item *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+        <ion-thumbnail slot="start">
+          <img [src]="item.payload.doc.data().image">
+        </ion-thumbnail>
+        <ion-label>{{item.payload.doc.data().title}}</ion-label>
+        <ion-button fill="clear" slot="end">Detalle</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="items.length == 0" class="empty-list">
+    Sin Empresas en este Momento
+  </div>
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="primary">
+    <ion-title color="ion-color-dark">Cerrar Sesión</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button class="flecha" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title >
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <h5>¿Que tipo de Empresa eres?</h5>
+  </div>
+  <div class="empty-list">
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block" [routerLink]="['/list', 'peluqueria']">Peluquerías</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'veterinaria']">Veterinarias</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'adopcion']">Adopción</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'adiestramiento']">Adiestramiento</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'residencia']">Residencias</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'tienda']">Tiendas</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button class="text-boton" expand="block"  [routerLink]="['/list', 'otros']">Ofertas</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="primary">
+    <ion-title color="dark">Cerrar Sesión</ion-title>
+  </ion-toolbar>
+</ion-footer>

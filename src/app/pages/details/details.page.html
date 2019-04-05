@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <img [src]="image" alt="this is the image"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngIf="isAdmin == true ; else noAdmin" size="6" offset="3">
+        <ion-button fill="outline" expand="block" size="small" color="ion-color-dark" class="text-boton" (click)="openImagePicker()">Cambiar imagen</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Nombre de la Empresa</ion-label>
+      <ion-input type="text" formControlName="title" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Ubicación</ion-label>
+      <ion-input type="text" formControlName="ubicacion" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark"><a>Dirección</a></ion-label>
+      <ion-input type="text" formControlName="direccion" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
+      <ion-input type="number" formControlName="telefono" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">DNI / CIF</ion-label>
+      <ion-input type="text" formControlName="cif" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Código Postal</ion-label>
+      <ion-input type="text" formControlName="codPostal" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Especialidad</ion-label>
+        <ion-input type="text" formControlName="especialidad" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Especialidades</ion-label>
+      <ion-input type="text" formControlName="especialidades" [readonly]="false"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="ion-color-dark">Animales</ion-label>
+        <ion-input type="text" formControlName="animales" [readonly]="false"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Correo Electronico</ion-label>
+      <ion-input type="text" formControlName="email" [readonly]="false"></ion-input>
+    </ion-item>
+    <div *ngIf="isAdmin == true; else no Admin">
+    <ion-button class="submit-button" expand="block" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
+  </div>
+      <ion-button *ngIf="isAdmin == true; else noAdmin" class="submit-button" expand="block" color="danger" (click)="delete()">Borrar</ion-button>
+  </form>
+
+</ion-content>

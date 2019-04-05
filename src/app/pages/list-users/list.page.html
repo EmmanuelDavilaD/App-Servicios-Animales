@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button class="flecha" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title>
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content *ngIf="items" class="list-mini-content" padding>
+  <ion-button (click)="loadMap()" shape="round" fill="outline"></ion-button>
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="../../assets/icon/center_marker.png" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+  <div id="address">
+    <span>Ubicaicion</span>
+  </div>
+  <div class="espacios">
+    <div id="map" ></div>
+  </div>
+  <div text-center>
+  <br>
+  <label>Buscar Por Ciudad: <input type="text" [(ngModel)]="searchText" placeholder="Madrid" /></label>
+  <br>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!--Especialidad-->
+        <ion-list>
+            <ion-radio-group [(ngModel)]="searchEspecialidades">
+              <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+                <ion-select-option><b>Peluquerias</b></ion-select-option>
+                <ion-select-option value="baño">Baño</ion-select-option>
+                <ion-select-option value="cortes">Cortes de Esposición</ion-select-option>
+                <ion-select-option value="Cupones">Cupones</ion-select-option>
+                <ion-select-option value="Otras">Otras</ion-select-option>
+                <ion-select-option><b>Veterinarias</b></ion-select-option>
+                <ion-select-option value="Esterilización">Esterilización</ion-select-option>
+                <ion-select-option value="Vacunación">Vacunación</ion-select-option>
+                <ion-select-option value="Otras">Otras</ion-select-option>
+                <ion-select-option value="Cupones">Cupones</ion-select-option>
+                <ion-select-option><b>Tiendas</b></ion-select-option>
+                <ion-select-option value="Ofertas">Ofertas</ion-select-option>
+                <ion-select-option value="Otras">Otras</ion-select-option>
+                <ion-select-option value="Cupones">Cupones</ion-select-option>
+                <ion-select-option><b>Adiestramiento</b></ion-select-option>
+                <ion-select-option value="Ofertas">Ofertas</ion-select-option>
+                <ion-select-option value="Demostración">Demostración</ion-select-option>
+                <ion-select-option><b>Adoptame</b></ion-select-option>
+                <ion-select-option value="Eventos Solidarios">Eventos Solidarios</ion-select-option>
+                <ion-select-option value="Ayuda Solidaria">Ayuda Solidaria</ion-select-option>
+                <ion-select-option value="Otros">Otros</ion-select-option>
+                <ion-select-option><b>Campañas</b></ion-select-option>
+                <ion-select-option value="Oficiales">Oficiales</ion-select-option>
+                <ion-select-option value="Eventos">Eventos</ion-select-option>
+              </ion-select>
+              </ion-radio-group>
+          </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!--Especialidad-->
+        <ion-list>
+          <ion-radio-group [(ngModel)]="searchAnimales">
+            <ion-select placeholder="Seleccionar Mascota" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+              <ion-select-option value="perros">Perros</ion-select-option>
+              <ion-select-option value='gatos' >Gatos</ion-select-option>
+              <ion-select-option value='aves' >Aves</ion-select-option>
+              <ion-select-option  value='hurones'>Hurones</ion-select-option>
+              <ion-select-option  value='peces'>Peces</ion-select-option>
+              <ion-select-option  value='caballos'>Caballos</ion-select-option>
+              <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+            </ion-select>
+          </ion-radio-group>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div text-center class="barra">
+    <h5 class="texto-h5">Empresas Seleccionadas</h5>
+  </div>
+  <div class="espacios">
+    <div class="scrollmenu">
+      <!-- Slide -->
+      <ion-slides [options]="sliderConfig">
+        <ion-slide *ngFor="let item of items" ng-repeat="item in items| filter: busqueda" [routerLink]="['/details-users', item.payload.doc.id]">
+          <div *ngIf="item.payload.doc.data().direccion && item.payload.doc.data().direccion.length || item.payload.doc.data().especialidades && item.payload.doc.data().especialidades.length || item.payload.doc.data().animales && item.payload.doc.data().animales.length">
+            <div *ngIf="item.payload.doc.data().direccion.includes(searchText) || item.payload.doc.data().especialidades.includes(searchEspecialidades) || item.payload.doc.data().especialidades.includes(searchAnimales)">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-card class="card" >
+                  <ion-card-header>
+                    <ion-card-title class="cardtitulo">
+                      {{item.payload.doc.data().title}}
+                    </ion-card-title>
+                    <ion-card-content>
+                      <img class="img-card" [src]="item.payload.doc.data().image" alt="...">
+                      <ion-button fill="clear" slot="end" class="texto-card">Detalles</ion-button>
+                    </ion-card-content>
+                  </ion-card-header>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+            </div>
+            </div>
+          </ion-slide>
+      </ion-slides>
+    </div>
+    <br>
+
+  </div>
+  <div class="barra-solidarias" text-center>
+    <h5 class="texto-h5">Empresas Solidarias</h5>
+  </div>
+  <div class="espacios">
+
+  </div>
+
+</ion-content>
+<ion-footer  class="footer">
+  <div text-center>
+    <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+  </div>
+
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
+</ion-footer>

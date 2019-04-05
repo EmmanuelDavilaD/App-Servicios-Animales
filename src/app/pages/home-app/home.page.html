@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-button class="what" color="light" slot="end" href="https://wa.me/+34644790417">
+      <ion-img class="whatsapp-img" size="small" src="../../../assets/icon/Whatsapp_37229.png"></ion-img>
+    </ion-button>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+      <h3 class="texto-header">Aquí, todo para tu mascota</h3>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <h5 text-center>Elije tu centro y pide cita</h5>
+  <div>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col class="columna" size="6" >
+          <img class="card-view1" src="../../../assets/cards/peluquerias.png" alt="" [routerLink]="['/list-users', 'peluqueria']">
+      </ion-col>
+      <ion-col  size="6">
+        <img class="card-view" src="../../../assets/cards/veterinaria.png" alt="" [routerLink]="['/list-users', 'veterinaria']">
+
+      </ion-col>
+      <ion-col class="columna1" size="6" >
+        <img class="card-view1" src="../../../assets/cards/tiendas.png" alt="" [routerLink]="['/list-users', 'tienda']">
+
+      </ion-col>
+      <ion-col size="6">
+        <img class="card-view" src="../../../assets/cards/adiestradores.png" alt="" [routerLink]="['/list-users', 'adiestramiento']">
+
+      </ion-col>
+      <ion-col size="6" >
+        <img class="card-view1" src="../../../assets/cards/residencias.png" alt="" [routerLink]="['/list-users', 'recidencia']">
+
+      </ion-col>
+      <ion-col size="6">
+        <img class="card-view" src="../../../assets/cards/adoptame.png" alt="" [routerLink]="['/list-users', 'adopcion']">
+
+      </ion-col>
+      <ion-col size="12" text-center>
+        <img class="card-view-campañas" src="../../../assets/imgs/Campañas Descuento.jpg" alt="" [routerLink]="['/list-users', 'campañas']">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+  <div text-center="">
+    <p class="text-fin-grid">Regístrate y recibe cupones y Ofertas.</p>
+  </div>
+
+</ion-content>
+
+<ion-footer class="footer">
+  <div class="textoPatro" text-center>
+    <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+  </div>
+
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
+</ion-footer>

@@ -1,0 +1,177 @@
+.fondo{
+  width: 180px !important;
+  height: 38px !important;
+  margin-top: auto !important;
+  margin-left: auto;
+}
+.whatsapp-img{
+  width: 25px;
+  height: 25px;
+}
+.what{
+  margin-top: -25px;
+}
+
+
+#custom-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  width:100%;
+  background-color: #002a3e;
+}
+
+.flb {
+  background-color: #3ebffb;
+  height:100%;
+  width:100%;
+  animation: pulse 1s linear forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Aligner-item {
+  max-width: 50%;
+}
+.Aligner-item--top {
+  align-self: flex-start;
+}
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+#custom-overlay img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  animation: animation 3100ms linear infinite both;
+  animation-delay: 1s;
+}
+@keyframes pulse {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.texto-header{
+  font-size: 14px;
+}
+
+.welcome-card {
+  max-height: 50xpx;
+  overflow: hidden;
+  border-top: -10px;
+}
+
+.titulo{
+  font-size: 11px;
+  justify-content: center;
+}
+
+ion-row{ 
+  ion-card{ 
+    width:100% !important; 
+    margin-left: 0 !important; 
+    margin-right: 0 !important; 
+    img{ width:100%; 
+    } 
+  } 
+}
+
+.patrocinadores {
+  width: 60% !important;
+}
+
+.whatsapp{
+
+bottom:right;
+}
+
+.btn-registro{
+  background-color: transparent !important;
+}
+.caja { float:left;margin-left:5px; }
+
+
+.card-view{
+  width: 150px;
+  height: 110%;
+  position: center;
+  border-left: auto ;
+  margin-left: auto;
+  padding-left: 3px;
+  margin-top: -10px;
+
+}
+
+
+
+.card-view1{
+  width: 150px;
+  height: 110%;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 3px;
+  margin-top: -10px;
+
+}
+.card-view-campañas{
+  width: 340px;
+  height: 110%;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+}
+
+.texto-patro{
+  font-size: 15px;
+}
+.textoPatro{
+  margin-bottom: -15px;
+}
+
+.text-fin-grid{
+  font-size: smaller;
+}
+
+.menu{
+  --width: 500px;
+}
+.footer{
+  background-color: white !important;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  color: white;
+  text-align: justify;
+  text-decoration: none;
+  display:inline-block;
+  padding:5px;
+  margin: auto;
+}
+
+div.scrollmenu a img{
+  width:60px;
+  height:60px;
+  margin:10px;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #CFCFCF;
+}
+
+

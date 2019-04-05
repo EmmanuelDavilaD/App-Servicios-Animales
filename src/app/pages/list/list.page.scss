@@ -1,0 +1,81 @@
+.empty-list {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 40px;
+  color: var(--ion-color-medium);
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 90% !important;
+    height: 150px !important;
+    margin: 0 !important;
+  }
+
+.cardtitulo{
+  font-size: smaller;
+}
+
+.espacios{
+  height: 180px;
+  width: auto;
+  background-color: #f5f6f9;
+}
+
+.img-card{
+  width: 80px;
+}
+.barra-lista{
+  background-color: #eb7b34;
+  height: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  color: #1e2023;
+}
+
+
+
+ion-badge {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100%;
+}
+
+.category-block {
+  margin-bottom: 4px;
+}
+
+.category-banner {
+  border-left: 8px solid var(--ion-color-secondary);
+  background: var(--ion-color-light);
+  height: 40px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.fondo{
+  width: 120px !important;
+  height: auto !important;
+}
+
+.flecha{
+  margin-right: -25px !important;
+}
+
+.barra{
+  background-color: #eb7b34;
+  height: 25px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  color: #1e2023;
+}
+.texto-h5{
+  font-size: small;
+  padding-top: 5px;
+  padding-bottom: auto;
+}

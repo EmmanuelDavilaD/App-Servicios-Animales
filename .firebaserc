@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "demo": "mascotas",
+    "default": "mascotas"
+  }
+}

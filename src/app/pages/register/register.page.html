@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar class="logo">
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+      <ion-title>
+        <img src="../../../assets/imgs/fondo.png" alt="">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding class="form-content">
+    <div text-center="">
+      <h5>Registro de Usuarios</h5>
+    </div>
+    <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+  
+      <ion-item>
+        <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <ion-item>
+        <ion-label position="floating" color="ion-color-dark">Localidad</ion-label>
+        <ion-input type="text" formControlName="localidad"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label formControlName="tipoMascota" color="ion-color-dark">Tipo de Mascota</ion-label>
+        <ion-select multiple="true" placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
+          <ion-select-option value="perros">Perros</ion-select-option>
+          <ion-select-option value='gatos' >Gatos</ion-select-option>
+          <ion-select-option  value='hurones'>Hurones</ion-select-option>
+          <ion-select-option  value='peces'>Peces</ion-select-option>
+          <ion-select-option  value='caballos'>Caballos</ion-select-option>
+          <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating" color="ion-color-dark">Confirmar Contraseña</ion-label>
+        <ion-input type="password" formControlName="confirmarPassword"></ion-input>
+      </ion-item>
+  
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div class="inner-wrapper">
+              <ion-label class="label label-ios">
+                <p class="checkbox proteccion">Antes de registrarte revisa los <a  routerLink="/terminos" >Términos y condiciones</a> y la <a  routerLink="/lqpd">LOPD</a>.</p>
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size="12">
+            <div class="inner-wrapper">
+              <ion-label class="label label-ios">
+                <ion-checkbox class="check" color="primary"></ion-checkbox>
+                <p  class="terminos"> Haciendo click aquì acepto los terminos y condicione.</p>
+  
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+  
+      </ion-grid>
+      <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Registrar</ion-button>
+      <label class="error-message">{{errorMessage}}</label>
+      <label class="success-message">{{successMessage}}</label>
+    </form>
+    <p class="go-to-login">Ya tienes una Cuenta? <a (click)="goLoginPage()">Iniciar Sesión.</a></p>
+  
+  </ion-content>
+  
+  <ion-footer class="footer">
+    <div text-center>
+      <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+    </div>
+  
+    <div class="scrollmenu">
+      <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+      <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+      <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+      <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+      <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+      <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    </div>
+  </ion-footer>
+
+
+

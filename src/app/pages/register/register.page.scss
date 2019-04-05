@@ -1,0 +1,61 @@
+.error-message
+{
+  color: var(--ion-color-danger);
+}
+
+.success-message
+{
+  color: var(--ion-color-success);
+}
+
+.go-to-login
+{
+  text-align: center;
+  margin-top: 20px;
+  font-size: smaller;
+}
+
+.submit-btn
+{
+  margin-top: 40px;
+}
+.proteccion{
+  font-size: smaller;
+
+}
+.terminos{
+  font-size: smaller;
+  margin-left: 20px;
+}
+.check{
+  position: absolute;
+}
+
+.footer{
+  background-color: white !important;
+}
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  color: white;
+  text-align: justify;
+  text-decoration: none;
+  display:inline-block;
+  padding:5px;
+  margin: auto;
+}
+
+div.scrollmenu a img{
+  width:60px;
+  height:60px;
+  margin:10px;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+

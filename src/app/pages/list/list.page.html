@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/new-empresa']">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title size="small">Empresas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content *ngIf="items" class="list-mini-content" padding>
+    <div text-center class="barra">
+        <h5 class="texto-h5">Empresas Disponibles</h5>
+      </div>
+  <!-- Slide -->
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+      <!--div *ngIf="item.payload.doc.data().especialidad"-->
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title class="cardtitulo">
+            {{item.payload.doc.data().title}}
+          </ion-card-title>
+          <ion-card-content>
+            <img class="img-card" [src]="item.payload.doc.data().image" alt="...">
+            <ion-button fill="clear" slot="end">Detalle</ion-button>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+      <!--/div-->
+    </ion-slide>
+  </ion-slides>
+  <div *ngIf="items.length == 0" class="empty-list">
+    Por favor Cree una Empresa.
+  </div>
+  <div text-center class="barra-lista">
+  </div>
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="primary">
+    <ion-title color="dark">Cerrar Sesión</ion-title>
+  </ion-toolbar>
+</ion-footer>

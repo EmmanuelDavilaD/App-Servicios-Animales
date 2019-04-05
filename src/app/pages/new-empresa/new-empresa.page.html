@@ -1,0 +1,246 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="texto-titulo">Nueva Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-row no-padding>
+      <ion-col size="6" offset="3">
+        <img [src]="image" alt="this is the image"/>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="6" offset="3">
+        <ion-button class="texto-boton" fill="outline" expand="block" size="small" (click)="openImagePicker()">Cambiar Foto</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Nombre de la empresa</ion-label>
+      <ion-input placeholder="Mascota Actual" type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
+        <ion-input placeholder="Descripción" type="text" formControlName="descripcion"></ion-input>
+      </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="ion-color-dark">Nº Colegiado</ion-label>
+            <ion-input placeholder="Nº Colegiado" type="number" formControlName="colegiado"></ion-input>
+          </ion-item>
+        <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Ubicación</ion-label>
+      <ion-input placeholder="Calle Mascota , 23 , Madrid" type="text" formControlName="ubicacion"></ion-input>
+    </ion-item>
+<!--Ubicación-->
+    <ion-item>
+      <ion-radio-group formControlName="direccion">
+        <ion-label>Ciudad</ion-label>
+        <ion-select  placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
+          <ion-select-option value="Madrid">Madrid</ion-select-option>
+          <ion-select-option value='A Coruña' >A Coruña</ion-select-option>
+          <ion-select-option value='álava'>álava</ion-select-option>
+          <ion-select-option value='Albacete' >Albacete</ion-select-option>
+          <ion-select-option value='Alicante'>Alicante</ion-select-option>
+          <ion-select-option value='Almería' >Almería</ion-select-option>
+          <ion-select-option value='Asturias' >Asturias</ion-select-option>
+          <ion-select-option value='ávila' >Ávila</ion-select-option>
+          <ion-select-option value='Badajoz' >Badajoz</ion-select-option>
+          <ion-select-option value='Barcelona'>Barcelona</ion-select-option>
+          <ion-select-option value='Burgos' >Burgos</ion-select-option>
+          <ion-select-option value='Cáceres' >Cáceres</ion-select-option>
+          <ion-select-option value='Cádiz' >Cádiz</ion-select-option>
+          <ion-select-option value='Cantabria' >Cantabria</ion-select-option>
+          <ion-select-option value='Castellón' >Castellón</ion-select-option>
+          <ion-select-option value='Ceuta' >Ceuta</ion-select-option>
+          <ion-select-option value='Ciudad Real' >Ciudad Real</ion-select-option>
+          <ion-select-option value='Córdoba' >Córdoba</ion-select-option>
+          <ion-select-option value='Cuenca' >Cuenca</ion-select-option>
+          <ion-select-option value='Gerona' >Gerona</ion-select-option>
+          <ion-select-option value='Girona' >Girona</ion-select-option>
+          <ion-select-option value='Las Palmas' >Las Palmas</ion-select-option>
+          <ion-select-option value='Granada' >Granada</ion-select-option>
+          <ion-select-option value='Guadalajara' >Guadalajara</ion-select-option>
+          <ion-select-option value='Guipúzcoa' >Guipúzcoa</ion-select-option>
+          <ion-select-option value='Huelva' >Huelva</ion-select-option>
+          <ion-select-option value='Huesca' >Huesca</ion-select-option>
+          <ion-select-option value='Jaén' >Jaén</ion-select-option>
+          <ion-select-option value='La Rioja' >La Rioja</ion-select-option>
+          <ion-select-option value='León' >León</ion-select-option>
+          <ion-select-option value='Lleida' >Lleida</ion-select-option>
+          <ion-select-option value='Lugo' >Lugo</ion-select-option>
+          <ion-select-option value='Madrid' >Madrid</ion-select-option>
+          <ion-select-option value='Malaga' >Málaga</ion-select-option>
+          <ion-select-option value='Mallorca' >Mallorca</ion-select-option>
+          <ion-select-option value='Melilla' >Melilla</ion-select-option>
+          <ion-select-option value='Murcia' >Murcia</ion-select-option>
+          <ion-select-option value='Navarra' >Navarra</ion-select-option>
+          <ion-select-option value='Orense' >Orense</ion-select-option>
+          <ion-select-option value='Palencia' >Palencia</ion-select-option>
+          <ion-select-option value='Pontevedra'>Pontevedra</ion-select-option>
+          <ion-select-option value='Salamanca'>Salamanca</ion-select-option>
+          <ion-select-option value='Segovia' >Segovia</ion-select-option>
+          <ion-select-option value='Sevilla' >Sevilla</ion-select-option>
+          <ion-select-option value='Soria' >Soria</ion-select-option>
+          <ion-select-option value='Tarragona' >Tarragona</ion-select-option>
+          <ion-select-option value='Tenerife' >Tenerife</ion-select-option>
+          <ion-select-option value='Teruel' >Teruel</ion-select-option>
+          <ion-select-option value='Toledo' >Toledo</ion-select-option>
+          <ion-select-option value='Valencia' >Valencia</ion-select-option>
+          <ion-select-option value='Valladolid' >Valladolid</ion-select-option>
+          <ion-select-option value='Vizcaya' >Vizcaya</ion-select-option>
+          <ion-select-option value='Zamora' >Zamora</ion-select-option>
+          <ion-select-option value='Zaragoza'>Zaragoza</ion-select-option>
+        </ion-select>
+      </ion-radio-group>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
+      <ion-input placeholder=" 123654321" type="number" formControlName="telefono">+34-</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">CIF</ion-label>
+      <ion-input placeholder="CIF" type="datepicker" formControlName="cif"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-radio-group formControlName="horario">
+        <ion-label>Horarios</ion-label>
+        <ion-list>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 08:00 - 18:00" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 09:00 - 20:00</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 24 Horas</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 24 Horas" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-Sabado 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-Sabado 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-Domingo 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-Domingo 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+        </ion-list>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Campañas</ion-label>
+      <ion-input placeholder="Obten 25% de Descuento al llamarnos" type="text" formControlName="campañas"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-radio-group formControlName="animales">
+            <ion-label>Tipo de Mascotas</ion-label>
+            <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+                <ion-select-option value="perros">Perros</ion-select-option>
+                <ion-select-option value='gatos' >Gatos</ion-select-option>
+                <ion-select-option value='aves' >Aves</ion-select-option>
+                <ion-select-option  value='hurones'>Hurones</ion-select-option>
+                <ion-select-option  value='peces'>Peces</ion-select-option>
+                <ion-select-option  value='caballos'>Caballos</ion-select-option>
+                <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+            </ion-select>
+            </ion-radio-group>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Codigo Postal</ion-label>
+      <ion-input placeholder="42000" type="number" formControlName="codPostal"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group formControlName="especialidad">
+        <ion-list-header>
+          <ion-label color="ion-color-dark">Especialidad</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label color="ion-color-dark">Peluquería</ion-label>
+          <ion-radio slot="start" value="peluqueria" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Veterinaria</ion-label>
+          <ion-radio slot="start" value="veterinaria"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Adopción</ion-label>
+          <ion-radio slot="start" value="adopcion"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Adiestramiento</ion-label>
+          <ion-radio slot="start" value="adiestramiento"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Residencia</ion-label>
+          <ion-radio slot="start" value="residencia"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Tiendas</ion-label>
+          <ion-radio slot="start" value="tienda"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Campañas</ion-label>
+          <ion-radio slot="start" value="campañas"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-list>
+      <ion-radio-group formControlName="especialidades">
+        <ion-label>Especialidades</ion-label>
+        <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+          <ion-select-option value="baño">Baño</ion-select-option>
+          <ion-select-option value="cortes">Cortes de Esposición</ion-select-option>
+          <ion-select-option value="Cupones">Cupones</ion-select-option>
+          <ion-select-option value="Otras">Otras</ion-select-option>
+          <ion-select-option>Veterinarias</ion-select-option>
+          <ion-select-option value="Esterilización">Esterilización</ion-select-option>
+          <ion-select-option value="Vacunación">Vacunación</ion-select-option>
+          <ion-select-option value="Otras">Otras</ion-select-option>
+          <ion-select-option value="Cupones">Cupones</ion-select-option>
+          <ion-select-option>Tiendas</ion-select-option>
+          <ion-select-option value="Ofertas">Ofertas</ion-select-option>
+          <ion-select-option value="Otras">Otras</ion-select-option>
+          <ion-select-option value="Cupones">Cupones</ion-select-option>
+          <ion-select-option>Adiestramiento</ion-select-option>
+          <ion-select-option value="Ofertas">Ofertas</ion-select-option>
+          <ion-select-option value="Demostración">Demostración</ion-select-option>
+          <ion-select-option>Adoptame</ion-select-option>
+          <ion-select-option value="Eventos Solidarios">Eventos Solidarios</ion-select-option>
+          <ion-select-option value="Ayuda Solidaria">Ayuda Solidaria</ion-select-option>
+          <ion-select-option value="Otros">Otros</ion-select-option>       
+          <ion-select-option>Campañas</ion-select-option>
+          <ion-select-option value="Oficiales">Oficiales</ion-select-option>
+          <ion-select-option value="Eventos">Eventos</ion-select-option>
+        </ion-select>
+        </ion-radio-group>
+    </ion-list>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
+      <ion-input placeholder="Mascota@gmail.com" type="text" formControlName="email"></ion-input>
+    </ion-item>
+  <ion-radio-group formControlName="plan">
+      <ion-list-header>
+        <ion-label>Plan</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Free</ion-label>
+        <ion-radio slot="start" value="gratis" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Premium</ion-label>
+        <ion-radio slot="start" value="premium"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <div text-center>
+      <a href="https://mascotaactual.es/empresa-3/">Contactar para Premium</a>
+    </div>
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" class="boton-crear">Crear</ion-button>
+  </form>
+</ion-content>

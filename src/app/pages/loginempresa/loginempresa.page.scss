@@ -1,0 +1,49 @@
+.footer{
+  background-color: white;
+}
+
+.boton{
+  background-color:#eb7b34 ;
+  color: #1e2023;
+}
+.texto-form{
+  color: #1e2023;
+}
+.fondo{
+  width: 120px !important;
+  height: auto !important;
+}
+
+.flecha{
+  margin-right: -25px !important;
+}
+.footer{
+  background-color: white !important;
+}
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  color: white;
+  text-align: justify;
+  text-decoration: none;
+  display:inline-block;
+  padding:5px;
+  margin: auto;
+}
+
+div.scrollmenu a img{
+  width:60px;
+  height:60px;
+  margin:10px;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+.text-preguntas{
+  font-size: small;
+}

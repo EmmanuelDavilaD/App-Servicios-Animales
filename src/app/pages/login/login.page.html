@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title >
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+
+  <div  text-center>
+    <h4 text-center>Iniciar Sección</h4>
+  </div>
+
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" color="primary">Entrar</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+  </form>
+  
+  <p class="go-to-register">
+  No tienes una Cuenta? <ion-button size="small" (click)="goRegisterPage()">Regístrate.</ion-button>
+</p>
+  <p class="go-to-register">
+    Eres una Empresa? <ion-button size="small" (click)="goLoginEmpresa()">Login Empresa.</ion-button>
+  </p>
+</ion-content>
+<ion-footer>
+  <div text-center>
+    <a href="https://mascotaactual.es/empresa-3/" class="text-preguntas">Preguntas frecuentes</a>
+  </div>
+  <ion-grid class="footer">
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,162 @@
+/*#map{
+  width: 100%;
+  height: 100%;
+}
+#map_canvas {
+  height: 50%;
+}*/
+
+#map_canvas {
+  width: 90%;
+  height: 80%;
+  border: 1px solid red;
+}
+ 
+ 
+#address {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+ 
+#map {
+  width: 100%;
+  height: 70vh;
+}
+ 
+.map-wrapper {
+  position: relative;
+ 
+  #map_center {
+    position: absolute;
+    z-index: 99;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    margin-left: -21px;
+    margin-top: -41px;
+  }
+}
+
+.empty-list {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 40px;
+  color: var(--ion-color-medium);
+}
+
+.fondo{
+  width: 180px !important;
+  height: 38px !important;
+  margin-top: auto !important;
+  margin-left: auto;
+}
+
+.flecha{
+  margin-right: -25px !important;
+}
+
+ion-badge {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100%;
+}
+
+.category-block {
+  margin-bottom: 4px;
+}
+
+.category-banner {
+  border-left: 8px solid var(--ion-color-secondary);
+  background: var(--ion-color-light);
+  height: 40px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.patrocinadores{
+   background-color: white;
+ }
+
+.texto-card{
+  font-size: 8px;
+  text-align: center;
+}
+
+.barra{
+  background-color: #eb7b34;
+  height: 25px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  color: #1e2023;
+}
+.texto-h5{
+  font-size: small;
+  padding-top: 5px;
+  padding-bottom: auto;
+}
+
+.barra-solidarias{
+  background-color: #eb7b34;
+  height: 25px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  color: #1e2023;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 90% !important;
+  height: 150px !important;
+  margin: 0 !important;
+}
+
+.cardtitulo{
+  font-size: smaller;
+}
+
+.espacios{
+  height: 180px;
+  width: auto;
+  background-color: #f5f6f9;
+}
+
+.img-card{
+  width: 80px;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  color: white;
+  text-align: justify;
+  text-decoration: none;
+  display:inline-block;
+  padding:5px;
+  margin: auto;
+}
+
+div.scrollmenu a img{
+  width:60px;
+  height:60px;
+  margin:10px;
+
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+.footer{
+  background-color: white !important;
+}
+
+
