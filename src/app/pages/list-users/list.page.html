@@ -16,19 +16,16 @@
 
 
 <ion-content *ngIf="items" class="list-mini-content" padding>
-  <ion-button (click)="loadMap()" shape="round" fill="outline"></ion-button>
+    <div class="espacios">
   <div class="map-wrapper">
-    <div id="map_center">
-      <img src="../../assets/icon/center_marker.png" />
-    </div>
     <div #map id="map"></div>
   </div>
   <div id="address">
-    <span>Ubicaicion</span>
   </div>
   <div class="espacios">
     <div id="map" ></div>
   </div>
+    </div>
   <div text-center>
   <br>
   <label>Buscar Por Ciudad: <input type="text" [(ngModel)]="searchText" placeholder="Madrid" /></label>
