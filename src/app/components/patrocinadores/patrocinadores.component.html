@@ -3,10 +3,11 @@
 </div>
 
 <div class="patrocinadores">
-  <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
-  <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
-  <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
-  <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
-  <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
-  <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+
+  <span *ngFor="let patrocinador of this.patrocinadores">
+    <a href="{{patrocinador.payload.doc.data().url}}">
+      <img src="{{patrocinador.payload.doc.data().image}}" alt="..." class="img-thumbnail">
+    </a>
+  </span>
+
 </div>
