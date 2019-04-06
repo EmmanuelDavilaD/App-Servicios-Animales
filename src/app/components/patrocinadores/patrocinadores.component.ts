@@ -21,7 +21,6 @@ export class PatrocinadoresComponent implements OnInit {
     this.firebaseService.getPatrocinadores().then(patros => {
       patros.subscribe(results => {
         this.patrocinadores = results;
-        console.log('patrocinadores', this.patrocinadores[0].payload.doc.data());
       });
     });
   }
