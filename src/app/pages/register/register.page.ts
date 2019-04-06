@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Validators, FormBuilder, FormGroup, FormControl, AbstractControl} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {PasswordValidator} from '../../validators/password.validator';
 
 @Component({
   selector: 'app-register',
@@ -11,70 +12,75 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
 
   validations_form: FormGroup;
-  errorMessage: string = '';
-  successMessage: string = '';
+  errorMessage = '';
+  successMessage = '';
 
   validation_messages = {
-   'email': [
-     { type: 'required', message: 'Email is required.' },
-     { type: 'pattern', message: 'Enter a valid email.' }
-   ],
-   'password': [
-     { type: 'required', message: 'Contraseña Requerida.' },
-     { type: 'minlength', message: 'La Contraseña debe tener mas de 5 digitos.' }
-   ],
-    'confirmarPassword': [
-      { type: 'required', message: 'Confirmar Contraseña Requerida.' },
-      { type: 'minlength', message: 'la contraseña debe ser igual.' }
+    'email': [
+      {type: 'required', message: 'Email requerido.'},
+      {type: 'pattern', message: 'Email inválido.'}
+    ],
+    'password': [
+      {type: 'required', message: 'Contraseña requerida.'},
+      {type: 'minlength', message: 'Debe tener más de 5 dígitos.'}
+    ],
+    'confirmPassword': [
+      {type: 'required', message: 'Contraseña requerida.'},
+      {type: 'minlength', message: 'Debe tener más de 5 dígitos.'},
+      {type: 'notMatch', message: 'Las contraseñas deben ser iguales.'}
     ],
     'localidad': [
-      { type: 'required', message: 'Localidad es Requerida.' },
-      { type: 'minlength', message: 'Localidad es Requerida.' }
-    ],
+      {type: 'required', message: 'Localidad es requerida.'},
+      {type: 'minlength', message: 'Localidad es requerida.'}
+    ]
   };
 
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.validations_form = this.formBuilder.group({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.minLength(5),
-        Validators.required
-      ])),
-      confirmarPassword: new FormControl('', Validators.compose([
-        Validators.minLength(5),
-        Validators.required
-      ])),
-      localidad: new FormControl('', Validators.compose([
-        Validators.minLength(3),
-        Validators.required
-      ])),
-    });
+        email: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        ])),
+        password: new FormControl('', Validators.compose([
+          Validators.minLength(5),
+          Validators.required
+        ])),
+        confirmPassword: new FormControl('', Validators.compose([
+          Validators.minLength(5),
+          Validators.required,
+          PasswordValidator.MatchPassword
+        ])),
+        localidad: new FormControl('', Validators.compose([
+          Validators.minLength(3),
+          Validators.required
+        ])),
+        tipoMascota: new FormControl('')
+      }
+    );
   }
 
-  tryRegister(value){
+  tryRegister(value) {
     this.authService.doRegister(value)
-     .then(res => {
-       console.log(res);
-       this.errorMessage = "";
-       this.successMessage = "Tu cuenta fue creada con exito";
-     }, err => {
-       console.log(err);
-       this.errorMessage = err.message;
-       this.successMessage = "";
-     })
+      .then(res => {
+        console.log(res);
+        this.errorMessage = '';
+        this.successMessage = 'Tu cuenta fue creada con exito';
+      }, err => {
+        console.log(err);
+        this.errorMessage = err.message;
+        this.successMessage = '';
+      });
   }
 
-  goLoginPage(){
-    this.router.navigate(["/login"]);
+  goLoginPage() {
+    this.router.navigate(['/login']);
   }
 
 }
