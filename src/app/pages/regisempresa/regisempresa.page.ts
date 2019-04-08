@@ -44,6 +44,9 @@ export class RegisempresaPage implements OnInit {
       {type: 'required', message: 'Numero de Telefono Requerido.'},
       {type: 'minlength', message: 'Numero de Telefono .'}
     ],
+    'captcha': [
+      {type: 'required', message: 'Captcha Requerido.'}
+    ],
   };
 
   constructor(
@@ -83,6 +86,9 @@ export class RegisempresaPage implements OnInit {
         Validators.minLength(9),
         Validators.maxLength(9),
         Validators.required
+      ])),
+      captcha: new FormControl('', Validators.compose([
+        //Validators.required
       ])),
     });
   }

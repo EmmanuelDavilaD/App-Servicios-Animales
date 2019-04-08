@@ -44,8 +44,8 @@
       </ng-container>
     </div>
     <ion-item>
-        <ion-label formControlName="localidad" color="ion-color-dark">Localidad</ion-label>
-        <ion-select  placeholder="Ciudad" cancelText="Cancelar" okText="Confirmar">
+        <ion-label color="ion-color-dark">Localidad</ion-label>
+        <ion-select formControlName="localidad" placeholder="Ciudad" cancelText="Cancelar" okText="Confirmar">
           <ion-select-option value="Madrid">Madrid</ion-select-option>
           <ion-select-option value='A Coruña' >A Coruña</ion-select-option>
           <ion-select-option value='álava'>álava</ion-select-option>
@@ -120,7 +120,7 @@
         </div>
       </ng-container>
     </div>
-
+    <app-recaptcha-form  name="captcha" required></app-recaptcha-form>
 <ion-grid>
   <ion-row>
     <ion-col size="12">

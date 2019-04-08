@@ -80,7 +80,7 @@ showSplash = true;
       if (auth) {
         this.userUid = auth.uid;
         this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
-          this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
+          this.isAdmin = userRole && Object.assign({}, userRole.roles).hasOwnProperty('admin') || false;
           // this.isAdmin = true;
         })
       }
@@ -92,7 +92,7 @@ showSplash = true;
       if (auth) {
         this.userUid = auth.uid;
         this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
-          this.isEmpresa = Object.assign({}, userRole.roles).hasOwnProperty('empresas');
+          this.isEmpresa =  userRole && Object.assign({}, userRole.roles).hasOwnProperty('empresas') || false;
           // this.isAdmin = true;
         })
       }
